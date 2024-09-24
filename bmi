@@ -1,0 +1,9 @@
+import pandas as pd
+from sklearn.neighbors  import KNeighborsClassifier
+a=pd.read_csv('bmi.csv')
+feature=pd.read_csv('bmi.csv',usecols=[0,1])
+label=pd.read_csv('bmi.csv',usecols=[2])
+b=KNeighborsClassifier(n_neighbors=2)
+b.fit(feature,label)
+print(b.predict([[170,57]]))
+print(b.score(feature,label))
